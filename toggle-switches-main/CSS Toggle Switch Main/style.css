@@ -1,0 +1,98 @@
+:root {
+  --bg-color: #fff;
+  --primary-text-color: #222;
+  --secondary-text-color: #444;
+}
+
+.dark-theme {
+  --bg-color: #3e4c59;
+  --primary-text-color: #fff;
+  --secondary-text-color: #ddd;
+  transition: 0.3s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-color);
+}
+
+.content {
+  color: var(--primary-text-color);
+  line-height: 1.5;
+}
+
+.content p {
+  color: var(--secondary-text-color);
+  font-size: 1.2rem;
+}
+input {
+  position: absolute;
+  opacity: 0;
+}
+
+label {
+  width: 75px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 50px;
+  padding: 0 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background: rgb(138, 138, 138);
+}
+label i {
+  font-size: 18px;
+}
+.ball {
+  position: absolute;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  background: #fff;
+  border-radius: 50%;
+  top: 4px;
+  left: 5px;
+  transition: 0.3s;
+}
+
+input:checked + label .ball {
+  transform: translateX(36px);
+  background: #fff;
+  transition: 0.3s;
+}
+
+.fa-sun {
+  color: gold;
+  transform: translateX(40px) rotate(250deg);
+  opacity: 0;
+  transition: 0.3s;
+}
+.fa-moon {
+  color: #fff;
+  transform: translateX(0);
+  transition: 0.3s;
+}
+
+input:checked + label .fa-moon {
+  transform: translateX(-40px) rotate(250deg);
+  opacity: 0;
+}
+input:checked + label .fa-sun {
+  transform: translateX(0);
+  opacity: 1;
+}
+input:checked + label {
+  background: #222;
+}

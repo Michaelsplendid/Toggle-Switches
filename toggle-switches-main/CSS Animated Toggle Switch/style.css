@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  display: none;
+}
+
+label {
+  display: flex;
+  width: 75px;
+  height: 35px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6px;
+  background: #222;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s;
+}
+input:checked + label {
+  background: #c0c0c0;
+}
+
+label i {
+  font-size: 18px;
+}
+
+label .fa-moon {
+  color: #fff;
+  transform: translateX(43px) rotate(250deg);
+  transition: 0.3s;
+  opacity: 0;
+}
+
+input:checked + label .fa-moon {
+  transform: translateX(0) rotate(0);
+  opacity: 1;
+}
+
+label .fa-sun {
+  color: gold;
+  transition: 0.3s;
+  opacity: 1;
+}
+
+input:checked + label .fa-sun {
+  transform: translateX(-43px) rotate(160deg);
+  opacity: 0;
+}
+
+label .ball {
+  position: absolute;
+  display: block;
+  width: 25px;
+  height: 25px;
+  top: 5px;
+  left: 5px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + label .ball {
+  transform: translateX(40px);
+  background: #222;
+}
